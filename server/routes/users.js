@@ -45,7 +45,11 @@ router.post('/:id/charities', (req, res) =>{
     console.log(formData);
     
     db.postCharitiesToUserId(formData)
-    .then(arr => res.json(arr) )
+    .then(() => {
+        db.getCharitiesByUserId(id)
+        .then(chars => res.json(chars))
+    })
+    //Need to remove join table and user id from response
 })
 
 // function doStuff () {
