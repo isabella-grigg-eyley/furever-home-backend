@@ -16,16 +16,15 @@ router.get('/', (req,res) => {
 // })
 
 router.get('/:id/animals', (req,res) =>{
-    // db.getUserByID(req.params.id)
-    // .then(userId =>{
-    //     res.json(userId)
-    // })
     let userId = req.params.id;
-    db.getAnimalsbyUserId(userId)
+    db.getAnimalsByUserId(userId)
         .then(aniarr => res.json(aniarr))
 } )
   
-
-// put routes here
+router.get('/:id/inventory', (req,res) => {
+    let userId = req.params.id;
+    db.getInventoryByUserId(userId)
+    .then(arr => res.json(arr))
+})
 
 module.exports = router

@@ -5,7 +5,8 @@ const connection = require('knex')(config)
 module.exports = {
   getUsers,
   getUserByID,
-  getAnimalsbyUserId
+  getAnimalsByUserId,
+  getInventoryByUserId
   
 }
 
@@ -22,20 +23,7 @@ function getUserByID(id, testConn) {
     .catch(err => {});
 }
 
-// function getAnimalsbyUserId(userId, testConn) {
-//   const conn = testConn || connection
-//   return conn('AnimalsAndUsers')
-//   .where('userId', userId)
-//   .then(animaluser => {
-//     let arr = [];
-//     animaluser.forEach(animal => {
-//       arr.push(conn('Animals').getUserByID(animal.userId))
-//     })
-//    return Promise.all(arr)
-//   })
-// }
-
-function getAnimalsbyUserId(id, testConn){
+function getAnimalsByUserId(id, testConn){
   const conn = testConn || connection
   return conn('Animals')
           .join('AnimalsAndUsers', 'Animals.id', 'AnimalsAndUsers.animalId')
@@ -43,17 +31,10 @@ function getAnimalsbyUserId(id, testConn){
           .where('userId', id)
 }
 
-// function getAnimalsbyUserId(userId, testConn) {
-//   const conn = testConn || connection
-//   return conn('AnimalsAndUsers')
-//   .join(conn('Animals').getUserByID(Animal))
-//   .then(console.log("we are here"))
-//   .then(animaluser => {
-//     let arr = [];
-//     animaluser.forEach(element => {
-//       arr.push(conn('Animals').getUserByID(Animal))
-      
-//     });
-//   })
-// }
-
+function getInventoryByUserId(id, testConn){
+  const conn = testConn || connection
+  return conn('Cosmetics')
+    .join('CosmeticsAndUsers', 'Cosmetics.id', 'CosmeticsAndUsers.cosmeticId')
+    .select()
+    .where('userId', id)
+}
