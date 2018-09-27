@@ -52,11 +52,6 @@ function postCharitiesToUserId(data, testConn){
   const conn = testConn || connection
   return conn('CharitiesAndUsers')
     .insert(data)
-  // .insert({
-  //   'userId': id,
-  //   'charityId': formData.charityId,
-  //   'donationPercent': formData.donationPercent
-  // })
 }
 
 // function addCosmetics (data, testConn) {

@@ -45,8 +45,17 @@ router.post('/:id/charities', (req, res) =>{
     console.log(formData);
     
     db.postCharitiesToUserId(formData)
-    .then(arr => res.json(arr))
+    .then(arr => res.json(arr) )
 })
+
+// function doStuff () {
+//     let arr = [];
+//     arr.push(getAnimalsByUserId())
+//     arr.push(getInventoryByUserId())
+//     arr.push(getCharitiesByUserId())
+//     Promise.all(arr)
+//         .then(blah)
+// }
 
 
 

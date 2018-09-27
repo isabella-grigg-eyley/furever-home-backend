@@ -1,6 +1,7 @@
 
 exports.up = function(knex, Promise) {
     return knex.schema.createTable('CharitiesAndUsers', function (table){
+        table.increments().primary()
         table.integer('userId')
         table.integer('charityId')
         table.integer('donationPercent')
