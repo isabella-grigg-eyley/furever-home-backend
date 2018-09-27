@@ -7,6 +7,7 @@ const usersRoute  = require('./routes/users')
 const animalsRoutes = require('./routes/animals')
 const eventsRoutes = require('./routes/events')
 const newsRoutes = require('./routes/news')
+const storeRoutes = require('./routes/store')
 const server = express()
 
 server.use(bodyParser.json())
@@ -19,6 +20,7 @@ server.use('/api/users', usersRoute)
 server.use('/api/events', eventsRoutes)
 server.use('/api/news', newsRoutes)
 server.use('/api/animals', animalsRoutes)
+server.use('/api/store', storeRoutes)
 
 
 

@@ -14,6 +14,12 @@ router.get('/:id', (req,res) => {
     .then(animal => res.json(animal))
 })
 
+
+router.get('/:id/inventory', (req,res) => {
+    let animalId = req.params.id;
+    db.getInventoryByAnimalId(animalId)
+    .then(arr => res.json(arr))
+})
   
 
 // put routes here
