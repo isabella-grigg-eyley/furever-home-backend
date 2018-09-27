@@ -5,8 +5,8 @@ exports.seed = function(knex, Promise) {
       .then(function () {
       
         return knex('AnimalsAndUsers').insert([
-          {animalID: '1', userId: '1'},
-          {animalID: '2', userId: '2'}
+          {animalId: '1', userId: '1'},
+          {animalId: '2', userId: '2'}
         ]);
       });
   };
