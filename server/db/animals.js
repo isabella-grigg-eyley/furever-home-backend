@@ -4,7 +4,8 @@ const connection = require('knex')(config)
 
 module.exports = {
   getAnimals,
-  getAnimalsById
+  getAnimalsById,
+  getInventoryByAnimalId
   
 }
 
@@ -19,4 +20,12 @@ function getAnimalsById(id, testConn) {
     .where('id', id)
     .first()
     .catch(err => {});
+}
+
+function getInventoryByAnimalId(id, testConn){
+  const conn = testConn || connection
+  return conn('Cosmetics')
+  .join('CosmeticsAndAnimals', 'Cosmetics.id', 'CosmeticsAndAnimals.cosmeticId')
+  .select()
+  .where('animalId', id)
 }

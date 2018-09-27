@@ -27,4 +27,10 @@ router.get('/:id/inventory', (req,res) => {
     .then(arr => res.json(arr))
 })
 
+router.get('/:id/charities', (req,res) => {
+    let userId = req.params.id;
+    db.getCharitiesByUserId(userId)
+    .then(arr => res.json(arr))
+})
+
 module.exports = router

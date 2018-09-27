@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
         table.string('organisation')
         table.string('headline')
         table.string('content')
-        table.string('photo')
+        table.string('image')
     })
   
 }
