@@ -7,7 +7,8 @@ module.exports = {
   getUserByID,
   getAnimalsByUserId,
   getInventoryByUserId,
-  getCharitiesByUserId
+  getCharitiesByUserId,
+  postCharitiesToUserId
 }
 
 function getUsers(testConn) {
@@ -46,3 +47,19 @@ function getCharitiesByUserId(id, testConn){
     .select()
     .where('userId', id)
 }
+
+function postCharitiesToUserId(data, testConn){
+  const conn = testConn || connection
+  return conn('CharitiesAndUsers')
+    .insert(data)
+  // .insert({
+  //   'userId': id,
+  //   'charityId': formData.charityId,
+  //   'donationPercent': formData.donationPercent
+  // })
+}
+
+// function addCosmetics (data, testConn) {
+//   const conn = testConn || connection
+//   data.
+// }

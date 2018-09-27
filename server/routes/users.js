@@ -33,4 +33,26 @@ router.get('/:id/charities', (req,res) => {
     .then(arr => res.json(arr))
 })
 
+
+router.post('/:id/charities', (req, res) =>{
+    let id = req.params.id;
+    let formData = req.body.map(obj => {
+        obj.userId = id
+        return obj
+    })
+
+
+    console.log(formData);
+    
+    db.postCharitiesToUserId(formData)
+    .then(arr => res.json(arr))
+})
+
+
+
+// router.post('/:id/inventory', (req,res) => {
+//     db.addCosmetics(req.params.id)
+    
+// })
+
 module.exports = router
