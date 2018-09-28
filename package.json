@@ -4,8 +4,11 @@
   "description": "React Redux using express",
   "main": "server/index.js",
   "scripts": {
-    "start": "webpack && node server",
-    "dev": "nodemon --watch server & webpack --watch"
+    "dev": "nodemon --watch server & webpack --watch",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "author": "EDA",
   "license": "ISC",
@@ -32,6 +35,9 @@
     "express": "^4.16.2",
     "knex": "^0.15.2",
     "pg": "^7.4.3",
-    "sqlite3": "^4.0.2"
+    "sqlite3": "^4.0.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "1.1.5"
   }
 }
