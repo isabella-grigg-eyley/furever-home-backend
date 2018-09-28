@@ -5,7 +5,9 @@ const connection = require('knex')(config)
 module.exports = {
   getAnimals,
   getAnimalsById,
-  getInventoryByAnimalId
+  getInventoryByAnimalId,
+  postInventoryToAnimalId,
+  deleteAnimalandInventory
   
 }
 
@@ -28,4 +30,18 @@ function getInventoryByAnimalId(id, testConn){
   .join('CosmeticsAndAnimals', 'Cosmetics.id', 'CosmeticsAndAnimals.cosmeticId')
   .select()
   .where('animalId', id)
+  .first()
+}
+
+function deleteAnimalandInventory(id, testConn){
+  const conn = testConn || connection
+  return conn('CosmeticsAndAnimals')
+  .where('animalId', id)
+  .del()
+}
+
+function postInventoryToAnimalId(data, testConn){
+  const conn = testConn || connection
+  return conn ('CosmeticsAndAnimals')
+  .insert(data)
 }

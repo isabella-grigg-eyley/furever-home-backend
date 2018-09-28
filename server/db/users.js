@@ -8,7 +8,8 @@ module.exports = {
   getAnimalsByUserId,
   getInventoryByUserId,
   getCharitiesByUserId,
-  postCharitiesToUserId
+  postCharitiesToUserId,
+  postInventoryToUserId
 }
 
 function getUsers(testConn) {
@@ -38,6 +39,12 @@ function getInventoryByUserId(id, testConn){
     .join('CosmeticsAndUsers', 'Cosmetics.id', 'CosmeticsAndUsers.cosmeticId')
     .select()
     .where('userId', id)
+}
+
+function postInventoryToUserId(data, testConn){
+  const conn = testConn || connection
+  return conn ('CosmeticsAndUsers')
+  .insert(data)
 }
 
 function getCharitiesByUserId(id, testConn){

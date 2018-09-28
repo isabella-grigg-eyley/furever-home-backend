@@ -27,6 +27,20 @@ router.get('/:id/inventory', (req,res) => {
     .then(arr => res.json(arr))
 })
 
+router.post('/:id/inventory', (req, res) =>{
+    let id = req.params.id;
+    let formData = req.body.map(obj => {
+        obj.userId =id
+        return obj
+    })
+
+    db.postInventoryToUserId(formData)
+    .then(() => {
+        db.getInventoryByUserId(id)
+        .then(chars => res.json(chars))
+    })
+})
+
 router.get('/:id/charities', (req,res) => {
     let userId = req.params.id;
     db.getCharitiesByUserId(userId)
