@@ -348,10 +348,7 @@ Get /api/meetings Yes Get a Users Meeting Histroy An Array of Meetings
 [
   {
     userId: 1
-    animalId: 1,
-    name: "Chippy",
-    species: "Dog",
-    disposition: "Sassy"
+    animalId: 1
   }
 ]
 ```
@@ -361,7 +358,7 @@ Get /api/meetings Yes Get a Users Meeting Histroy An Array of Meetings
 ```
 [
   {
-    id: 1,
+    animalId: 1,
     name: "Chippy",
     species: "Dog",
     disposition: "Sassy"
@@ -390,10 +387,7 @@ Get /api/meetings Yes Get a Users Meeting Histroy An Array of Meetings
 [
   {
     userId: 1,
-    cosmeticId: 1,
-    name: "Raincoat",
-    image: "raincoat.jpg",
-    price: 2000
+    cosmeticId: 1
   }
 ]
 ```
@@ -403,7 +397,7 @@ Get /api/meetings Yes Get a Users Meeting Histroy An Array of Meetings
 ```
 [
   {
-    id: 1,
+    cosmeticId: 1,
     name: "Raincoat",
     image: "raincoat.jpg",
     price: 2000
@@ -435,10 +429,7 @@ Get /api/meetings Yes Get a Users Meeting Histroy An Array of Meetings
 ```
 {
   animalId: 1,
-  cosmeticId: 2,
-  name: "Bow-tie",
-  image: "Bow-tie.jpg",
-  price: 1750
+  cosmeticId: 2
 }
 ```
 
@@ -448,7 +439,7 @@ Get /api/meetings Yes Get a Users Meeting Histroy An Array of Meetings
 
 ```
   {
-    id: 2,
+    cosmeticId: 2,
     name: "Bow-tie",
     image: "Bow-tie.jpg",
     price: 1750

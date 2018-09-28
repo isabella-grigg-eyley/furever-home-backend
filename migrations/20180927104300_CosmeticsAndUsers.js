@@ -1,6 +1,7 @@
 
 exports.up = function(knex, Promise) {
     return knex.schema.createTable('CosmeticsAndUsers', function (table){
+        table.increments().primary()
         table.integer('userId')
         table.integer('cosmeticId')
     })
