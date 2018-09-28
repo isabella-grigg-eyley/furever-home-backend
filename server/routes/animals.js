@@ -35,8 +35,5 @@ router.post('/:id/inventory', (req, res) =>{
 
 })
 
-  
-
-// put routes here
 
 module.exports = router
