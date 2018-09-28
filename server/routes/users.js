@@ -55,7 +55,6 @@ router.post('/:id/charities', (req, res) =>{
         return obj
     })
 
-
     console.log(formData);
     
     db.postCharitiesToUserId(formData)
@@ -65,6 +64,21 @@ router.post('/:id/charities', (req, res) =>{
     })
     //Need to remove join table and user id from response
 })
+
+router.post('/:id/animals', (req, res) =>{
+    let id = req.params.id;
+    let formData = req.body.map(obj => {
+        obj.userId = id
+        return obj
+    })
+    console.log(formData);
+        db.postAnimalsToUserId(formData)
+    .then(() => {
+        db.getAnimalsByUserId(id)
+        .then(chars => res.json(chars))
+   
+})
+    })
 
 // function doStuff () {
 //     let arr = [];

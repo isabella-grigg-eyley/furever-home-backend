@@ -34,6 +34,7 @@ router.post('/:id/inventory', (req, res) =>{
     })))
 
 })
+
   
 
 // put routes here

@@ -6,9 +6,8 @@ module.exports = {
   getAnimals,
   getAnimalsById,
   getInventoryByAnimalId,
-  postInventoryToAnimalId,
-  deleteAnimalandInventory
-  
+  deleteAnimalandInventory,
+  postInventoryToAnimalId  
 }
 
 function getAnimals(testConn) {
@@ -17,7 +16,7 @@ function getAnimals(testConn) {
 }
 
 function getAnimalsById(id, testConn) {
-  const conn = testConn || connection
+  const conn = testConn || connectionname
   return conn('Animals')
     .where('id', id)
     .first()
@@ -28,7 +27,7 @@ function getInventoryByAnimalId(id, testConn){
   const conn = testConn || connection
   return conn('Cosmetics')
   .join('CosmeticsAndAnimals', 'Cosmetics.id', 'CosmeticsAndAnimals.cosmeticId')
-  .select()
+  .select([ 'cosmeticId','name','image', 'price'])
   .where('animalId', id)
   .first()
 }
