@@ -7,8 +7,8 @@ const router = express.Router()
 
 router.get('/', (req,res) => {
     db.getUsers()
-    .then(users => res.json(users))
-      })
+        .then(users => res.json(users))
+})
 
 // router.get('/:id', (req,res) => {
 //     db.getUserByID(req.params.id)
@@ -54,31 +54,27 @@ router.post('/:id/charities', (req, res) =>{
         obj.userId = id
         return obj
     })
-
-    console.log(formData);
-    
     db.postCharitiesToUserId(formData)
-    .then(() => {
-        db.getCharitiesByUserId(id)
-        .then(chars => res.json(chars))
-    })
+        .then(() => {
+            db.getCharitiesByUserId(id)
+            .then(chars => res.json(chars))
+        })
     //Need to remove join table and user id from response
 })
 
-router.post('/:id/animals', (req, res) =>{
+router.post('/:id/animals', (req, res) => {
     let id = req.params.id;
     let formData = req.body.map(obj => {
         obj.userId = id
         return obj
     })
-    console.log(formData);
-        db.postAnimalsToUserId(formData)
-    .then(() => {
-        db.getAnimalsByUserId(id)
-        .then(chars => res.json(chars))
+    db.postAnimalsToUserId(formData)
+        .then(() => {
+            db.getAnimalsByUserId(id)
+            .then(chars => res.json(chars))
    
+        })
 })
-    })
 
 // function doStuff () {
 //     let arr = [];
