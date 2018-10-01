@@ -6,9 +6,10 @@ exports.seed = function (knex, Promise) {
 
       return knex('Animals').insert([
         { id: 1, name: 'Chippy', species: 'dog', disposition: 'sassy' },
-        { id: 2, name: 'Twinkie', species: 'dog', disposition: 'happy' },
-        { id: 3, name: 'Donut', species: 'cat', disposition: 'grumpy' },
-        { id: 4, name: 'Carlos', species: 'rabbit', disposition: 'sleepy' },
+        { id: 2, name: 'Star', species: 'dog', disposition: 'regal' },
+        { id: 3, name: 'Twinkie', species: 'dog', disposition: 'happy' },
+        { id: 4, name: 'Donut', species: 'cat', disposition: 'grumpy' },
+        { id: 5, name: 'Carlos', species: 'rabbit', disposition: 'sleepy' },
       ]);
     });
 };
