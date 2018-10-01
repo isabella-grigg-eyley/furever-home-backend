@@ -6,7 +6,7 @@ exports.up = function (knex, Promise) {
         table.string('password')
         table.string('email')
         table.integer('coins')
-        table.dateTime('logoutTime')
+        table.bigInteger('logoutTime')
     })
 
 }
