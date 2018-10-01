@@ -4,6 +4,7 @@
   "description": "React Redux using express",
   "main": "server/index.js",
   "scripts": {
+    "postinstall": "knex migrate:latest",
     "dev": "nodemon --watch server & webpack --watch",
     "start": "react-scripts start",
     "build": "react-scripts build",
