@@ -15,7 +15,7 @@ server.use(bodyParser.json())
 // server.use(cors('*'));
 
 server.use(express.json())
-server.use(express.static(path.join(__dirname, '../public')))
+// server.use(express.static(path.join(__dirname, '../public')))
 server.use('/api/users', usersRoute)
 server.use('/api/events', eventsRoutes)
 server.use('/api/news', newsRoutes)
