@@ -11,4 +11,3 @@ function getCosmetics(testConn) {
     return conn('Cosmetics')
         .select()
 }
-
