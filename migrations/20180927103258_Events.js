@@ -6,7 +6,7 @@ exports.up = function (knex, Promise) {
         table.string('headline')
         table.text('content', 50000)
         table.text('image', 5000)
-        table.timestamp('dateAndTime')
+        table.string('dateAndTime')
         table.string('location')
     })
 
