@@ -1,7 +1,6 @@
-
-exports.seed = function (knex, Promise) {
+exports.seed = function(knex, Promise) {
   return knex('News').del()
-    .then(function () {
+    .then(function() {
       return knex('News').insert([
         { id: 1, organisation: 'SPCA', headline: 'Grumpy Cat would like to be known as Crabby Cat ', content: 'After many years in the spotlight, Crabby Cat would really love to lead a quiet life and has changed his name by statutory declaration to now be Crabby Cat.', image: '/images/news/grumpycat.jpg' },
         { id: 2, organisation: 'Animal Welfare', headline: 'Working together to save wildlife – the No Domestic Trade campaign ', content: 'A secondary school teacher in New Zealand, Virginia Woolf has worked tirelessly over the past five years, campaigning to protect animals in the wild who are at serious risk of becoming extinct because they are being poached for their skin, tusks and horn. How to show your support The answer is simple: ban all trade, and we may be able to save what is left of these incredible creatures. Virginia runs a community platform and organisation entitled NZFEW (New Zealanders for Endangered Wildlife) which aims to highlight these significant wildlife issues, and continues to encourage as many people as possible to sign the online or paper copy of the letter to Minister of Conservation Eugenie Sage so that there are enough signatures to persuade her to take the issue to Cabinet for discussion over changing the legislation.“Much-needed change is long overdue in NZ legislation to ban all trade in ivory and rhino horn here in the South Pacific, thereby allowing us to play our part in contributing to the preservation of these species,” says Virginia. New Zealanders are encouraged to sign the petition and show their support by visiting http://march4elephantsandrhinos.org/', image: '/images/news/bantrade.jpg' },
